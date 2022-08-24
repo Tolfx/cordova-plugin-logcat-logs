@@ -1,0 +1,32 @@
+{
+  "name": "cordova-plugin-logcat-logs",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "cordova": {
+    "id": "cordova-plugin-logcat-logs",
+    "platforms": [
+      "android"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tolfx/cordova-plugin-logcat-logs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tolfx/cordova-plugin-logcat-logs/issues"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=10.0.0"
+    }
+  ],
+  "homepage": "https://github.com/Tolfx/cordova-plugin-logcat-logs#readme"
+}
