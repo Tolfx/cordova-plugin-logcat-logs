@@ -1,4 +1,4 @@
-package dev.tolfx.logcat.logs;
+package org.apache.cordova.logcat;
 
 import java.io.File;
 import java.io.IOException;

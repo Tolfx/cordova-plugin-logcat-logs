@@ -5,7 +5,7 @@
     <description>Gets logcat logs</description>
     <license>Apache 2.0</license>
     <keywords>cordova,logcat,logs,debug</keywords>
-    <js-module src="www/logcatLogs.js" name="device">
+    <js-module src="www/logcatLogs.js" name="LogCatLogs">
         <clobbers target="plugin.logcat" />
     </js-module>
 
