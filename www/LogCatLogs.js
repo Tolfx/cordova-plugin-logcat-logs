@@ -4,9 +4,6 @@ function getLogs(response, failure)
 }
 
 
-// Attach to window and cordova.plugins
-window.logcatLogs = {
+module.exports = {
     getLogs: getLogs
-};
-
-window.cordova?.plugins["logcatLogs"] = window.logcatLogs;
+}

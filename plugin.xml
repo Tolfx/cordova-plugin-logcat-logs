@@ -6,7 +6,7 @@
     <license>Apache 2.0</license>
     <keywords>cordova,logcat,logs,debug</keywords>
     <js-module src="www/LogCatLogs.js" name="LogCatLogs">
-        <clobbers target="LogCatLogs" />
+        <clobbers target="window.LogCatLogs" />
     </js-module>
 
     <platform name="android">
