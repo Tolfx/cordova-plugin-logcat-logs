@@ -1,21 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-plugin-logcat-logs" version="0.0.0">
-    <name>LogCat Logs</name>
-    <description>Gets logcat logs</description>
-    <license>Apache 2.0</license>
-    <keywords>cordova,logcat,logs,debug</keywords>
-    <js-module src="www/LogCatLogs.js" name="LogCatLogs">
-        <clobbers target="window.LogCatLogs" />
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="org.apache.cordova.logcat" version="0.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>LogCatLogs</name>
+    <js-module name="LogCatLogs" src="www/LogCatLogs.js">
+        <clobbers target="cordova.plugins.LogCatLogs" />
     </js-module>
-
     <platform name="android">
-        <config-file target="config.xml" parent="/*">
+        <config-file parent="/*" target="res/xml/config.xml">
             <feature name="LogCatLogs">
                 <param name="android-package" value="org.apache.cordova.logcat.LogCatLogs" />
-                <param name="onload" value="true" />
             </feature>
         </config-file>
-        <source-file src="src/android/LogCatLogs.java" target-dir="src/org/apache/cordova/logcat" />
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/LogCatLogs.java" target-dir="src/org/apache/cordova/logcat/LogCatLogs" />
     </platform>
 </plugin>

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "cordova": {
-    "id": "cordova-plugin-logcat-logs",
+    "id": "org.apache.cordova.logcat",
     "platforms": [
       "android"
     ]

@@ -22,8 +22,7 @@ public class LogCatLogs extends CordovaPlugin
     private static final String LOG_FILE_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + LOG_FILE_NAME;
 
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) 
-    throws JSONException
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException
     {
         if (action.equals("getLogs"))
         {
@@ -58,7 +57,7 @@ public class LogCatLogs extends CordovaPlugin
         return outputFile;
     }
 
-    public static String readFileToString(String pathToFile)
+    public String readFileToString(String pathToFile)
     {
         byte[] buffer = readFileToByteArray(pathToFile);
 
@@ -68,7 +67,7 @@ public class LogCatLogs extends CordovaPlugin
         return null;
     }
 
-    public static byte[] readFileToByteArray(String pathToFile)
+    public byte[] readFileToByteArray(String pathToFile)
     {
         byte[] result = null;
 

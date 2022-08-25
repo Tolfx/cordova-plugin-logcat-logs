@@ -1,6 +1,8 @@
+const exec = require('cordova/exec');
+
 function getLogs(response, failure)
 {
-    cordova.exec(response, failure, "LogCatLogs", "getLogs", []);
+    exec(response, failure, "LogCatLogs", "getLogs", []);
 }
 
 
