@@ -3,15 +3,16 @@ package org.apache.cordova.logcat;
 import java.io.File;
 import java.io.IOException;
 import org.apache.cordova.CallbackContext;
+import android.content.Context;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
 import android.os.Environment;
-
+import android.app.Activity;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaWebView;
 import java.io.FileNotFoundException;
-
 import java.io.RandomAccessFile;
-
 import android.util.Log;
 
 public class LogCatLogs extends CordovaPlugin
@@ -19,7 +20,14 @@ public class LogCatLogs extends CordovaPlugin
 
     private static final String LOG_TAG = "LogCatLogs";
     private static final String LOG_FILE_NAME = "logcat.txt";
-    private static final String LOG_FILE_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + LOG_FILE_NAME;
+    private Activity activity = null;
+
+    @Override
+    public void initialize(CordovaInterface cordova, CordovaWebView webView)
+    {
+    	super.initialize(cordova, webView);
+        activity = cordova.getActivity();
+    }
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException
@@ -53,7 +61,14 @@ public class LogCatLogs extends CordovaPlugin
 
     private File createLogFile()
     {
-        File outputFile = new File(LOG_FILE_PATH);
+        Context context = activity.getApplicationContext();
+        String b = context.getFilesDir().getAbsolutePath();
+        File outputFile = new File(b+"/"+LOG_FILE_NAME);
+        try {
+            Runtime.getRuntime().exec("logcat -f " + outputFile.getAbsolutePath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return outputFile;
     }
 
